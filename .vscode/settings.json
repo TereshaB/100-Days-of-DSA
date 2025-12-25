@@ -5,5 +5,6 @@
     },
     "github.copilot.enable": {
         "*": false
-    }
+    },
+    "code-runner.runInTerminal": true
 }
