@@ -15,6 +15,6 @@ int main()
     cout<< test.front()<<endl; // prints the value of vector at front 
     cout<<test.back()<<endl;   // prints the value of vector at back
     cout<< test.at(2)<<endl;  // returns the value of vector stored at index 2
-    test.insert(test.begin()+, 0);
+    test.insert(test.begin(), 0);
     
 }
