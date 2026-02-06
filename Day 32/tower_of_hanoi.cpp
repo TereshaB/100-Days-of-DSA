@@ -13,6 +13,8 @@ void toh(int n , string source  , string helper , string destination)
 }
 int main()
 {
-    int n =2;
-    toh(n,"S","H","D");
+    int n;
+    cout<<"Enter the value of n "<<endl;
+    cin>>n;
+    toh(n,"Source","Helper","Destination");
 } 
