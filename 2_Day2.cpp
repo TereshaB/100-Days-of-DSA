@@ -16,8 +16,7 @@ int main()
     }
     cout<<"Smallest number in the array is "<<smallest<<endl;
     //2.Find the largest number in an array 
-    int largest= INT_MIN;
-    for(int i =0; i<size;i++)
+    int largest= INT_MIN;    for(int i =0; i<size;i++)
     {
         if(arr[i]>largest)
         {
