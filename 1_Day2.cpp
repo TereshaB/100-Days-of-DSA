@@ -17,6 +17,7 @@ int main()
     cout<<"The values are :"<<endl;
    for (int i =0;i<n;i++)  //printing the values 
    {
-    cout<<arr[i]<<endl;
+    cout<<arr[i]
+       cout<<endl;
    }
 }
