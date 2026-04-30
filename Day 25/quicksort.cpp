@@ -1,52 +1,40 @@
-// work in progress 
-// insertion or selection sort
 #include<iostream>
-#include<math.h>
+#include<vector>
 using namespace std;
-int A[10];
-int Partition(int l ,int h)
-{  
-    int pivot=A[l];
-    int i=l;
-    int  j=h;
-    while(i<j)
+int partition(vector <int> &arr , int st ,int end )
+{
+    int idx = st-1 , pivot=arr[end];
+    for(int j=st;j<end;j++)// j only goes till end -1 as pivot doesn't need to be sorted 
     {
-        do 
+        if(arr[j]<=pivot)
         {
-            i++;
-        }
-        while( A[i]<=pivot);
-        do 
-        {
-            j++;
-        }
-        while(A[j]>=pivot);
-        if(i<j)
-        {
-            swap(A[i],A[j]);
+            idx++;
+            swap(arr[j],arr[idx]);
         }
     }
-    swap(A[l],A[j]);
-    return j; // partition position 
+    idx++;
+    swap(arr[end],arr[idx]);
+    return idx; 
 }
-void Quick_sort(int l , int h )
+
+void quickSort(vector<int> &arr,int st, int end)
 {
-    if(l<h)
+    if(st<end)//this is before quick sort divides to one element each at that point you don't need sorting 
     {
-        int j = Partition(l,h);
-        Quick_sort(l,j-1);
-        Quick_sort(j+1,h);
+        int pivIdx= partition(arr,st,end);
+        quickSort(arr,st,pivIdx-1); // for left half 
+        quickSort(arr,pivIdx+1,end); // for right half 
     }
 }
 int main()
 {
-    int A[]={10,16,8,12,15,6,3,9,5};
-    int low = A[0];
-    int high= A[9];
-    Partition(low,high);
-    for(int i =0;i<10;i++)
+    vector<int>arr={12,31,35,8,32,7,16};
+    quickSort(arr,0,arr.size()-1);
+    for(int i=0;i<arr.size();i++)
     {
-        cout<<A[i]<<endl;
+        cout<<arr[i]<<" ";
     }
-    
-}
+    return 0;
+    }
+
+
